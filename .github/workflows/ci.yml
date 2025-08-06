@@ -1,0 +1,123 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        compiler: [clang-15, gcc-11]
+        build_type: [Release, Debug]
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential cmake ninja-build clang-15 gcc-11 g++-11
+    
+    - name: Setup compiler environment
+      run: |
+        if [ "${{ matrix.compiler }}" = "clang-15" ]; then
+          echo "CC=clang-15" >> $GITHUB_ENV
+          echo "CXX=clang++-15" >> $GITHUB_ENV
+        else
+          echo "CC=gcc-11" >> $GITHUB_ENV
+          echo "CXX=g++-11" >> $GITHUB_ENV
+        fi
+    
+    - name: Configure CMake
+      run: |
+        cmake -S . -B build -G Ninja \
+          -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} \
+          -DCMAKE_C_COMPILER=$CC \
+          -DCMAKE_CXX_COMPILER=$CXX
+    
+    - name: Build
+      run: cmake --build build -j
+    
+    - name: Run tests
+      run: ctest --test-dir build --output-on-failure
+    
+    - name: Generate sample data
+      run: |
+        mkdir -p data
+        ./build/tools/simgen --messages 100000 --symbols AAPL,MSFT --output data/test.bin
+    
+    - name: Run integration test
+      run: |
+        timeout 30s ./build/src/market-feed \
+          --input data/test.bin \
+          --symbols AAPL,MSFT \
+          --publish-top-of-book-us 10000 > output.csv || true
+        # Check that output file has content
+        [ -s output.csv ] && echo "Integration test passed" || exit 1
+  
+  benchmark:
+    runs-on: ubuntu-latest
+    needs: build-and-test
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential cmake ninja-build clang-15
+    
+    - name: Setup compiler
+      run: |
+        echo "CC=clang-15" >> $GITHUB_ENV
+        echo "CXX=clang++-15" >> $GITHUB_ENV
+    
+    - name: Configure CMake
+      run: |
+        cmake -S . -B build -G Ninja \
+          -DCMAKE_BUILD_TYPE=Release \
+          -DCMAKE_C_COMPILER=clang-15 \
+          -DCMAKE_CXX_COMPILER=clang++-15
+    
+    - name: Build
+      run: cmake --build build -j
+    
+    - name: Run benchmarks
+      run: |
+        ./build/bench/market_feed_benchmarks --benchmark_format=json > benchmark_results.json
+    
+    - name: Upload benchmark results
+      uses: actions/upload-artifact@v4
+      with:
+        name: benchmark-results
+        path: benchmark_results.json
+    
+    - name: Display benchmark summary
+      run: |
+        echo "Benchmark Results Summary:"
+        grep -E '"name"|"real_time"|"cpu_time"|"items_per_second"' benchmark_results.json | head -20
+  
+  docker:
+    runs-on: ubuntu-latest
+    needs: build-and-test
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Build Docker image
+      run: docker build -t market-feed:${{ github.sha }} .
+    
+    - name: Run Docker benchmark
+      run: |
+        docker run --rm market-feed:${{ github.sha }} > docker_benchmark.txt
+    
+    - name: Upload Docker benchmark results
+      uses: actions/upload-artifact@v4
+      with:
+        name: docker-benchmark-results
+        path: docker_benchmark.txt

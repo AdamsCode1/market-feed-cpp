@@ -1,0 +1,57 @@
+# Build directories
+build/
+build-*/
+
+# Data files
+data/*.bin
+data/*.csv
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Compiled binaries
+*.o
+*.so
+*.a
+*.exe
+
+# Test outputs
+*.log
+test_feed_*
+integration_test_*
+bench_feed_*
+
+# Coverage files
+*.gcno
+*.gcda
+*.gcov
+coverage.info
+coverage/
+
+# Temporary files
+tmp/
+temp/
+
+# CMake cache
+CMakeCache.txt
+CMakeFiles/
+
+# Package files
+*.tar.gz
+*.zip
+
+# Benchmark results
+benchmark_results.json
+*.benchmark
+
+# Core dumps
+core
+core.*
