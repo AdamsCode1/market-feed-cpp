@@ -379,8 +379,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Adam Hassan** - Software Engineer interested in High-Performance Systems & Financial Technology
 
-- 📧 **Email**: [your.email@example.com](mailto:your.email@example.com)
-- 💼 **LinkedIn**: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)
+- 📧 **Email**: [your.email@example.com](mailto:02adamhassan@gmail.com)
+- 💼 **LinkedIn**: [linkedin.com/in/adamhassxn](https://linkedin.com/in/adamhassxn)
 - 🐙 **GitHub**: [@AdamsCode1](https://github.com/AdamsCode1)
 
 > *This project represents my journey learning about high-performance financial systems. I'm passionate about building systems that can process millions of transactions with microsecond precision.*
