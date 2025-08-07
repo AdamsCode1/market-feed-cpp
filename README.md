@@ -379,7 +379,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Adam Hassan** - Software Engineer interested in High-Performance Systems & Financial Technology
 
-- 📧 **Email**: [your.email@example.com](mailto:02adamhassan@gmail.com)
+- 📧 **Email**: [02adamhassan@gmail.com](mailto:02adamhassan@gmail.com)
 - 💼 **LinkedIn**: [linkedin.com/in/adamhassxn](https://linkedin.com/in/adamhassxn)
 - 🐙 **GitHub**: [@AdamsCode1](https://github.com/AdamsCode1)
 
