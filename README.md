@@ -15,7 +15,7 @@ A high-throughput market data feed handler and order book engine built with mode
 
 <div align="center">
 
-![Performance Dashboard](docs/performance_dashboard.png)
+![Performance Dashboard](docs/docs/performance_dashboard.png)
 
 *Comprehensive performance analysis showing 4.8M+ msgs/s throughput, sub-20µs latency, and component-level benchmarks*
 
@@ -25,7 +25,7 @@ A high-throughput market data feed handler and order book engine built with mode
 
 <div align="center">
 
-![System Architecture](docs/system_architecture.png)
+![System Architecture](docs/docs/system_architecture.png)
 
 *Production-ready architecture demonstrating advanced C++20 patterns, lock-free data structures, and financial domain expertise*
 
@@ -35,7 +35,7 @@ A high-throughput market data feed handler and order book engine built with mode
 
 <div align="center">
 
-![Technology Stack](docs/technology_stack.png)
+![Technology Stack](docs/docs/technology_stack.png)
 
 *Modern C++20 implementation with industry-grade performance optimization techniques*
 
