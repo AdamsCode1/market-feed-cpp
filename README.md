@@ -1,8 +1,8 @@
 # Market Feed - High-Performance Market Data Feed Handler
 
-> **🚀 Showcase Project**: Demonstrating expertise in **C++20**, **Low-Latency Systems**, **Financial Technology**, and **High-Performance Computing**
+> **🚀 Learning Project**: Exploring **C++20**, **Low-Latency Systems**, **Financial Technology**, and **High-Performance Computing**
 
-A production-ready, high-throughput market data feed handler and order book engine built with modern C++20. This project demonstrates real-world skills in **quantitative finance**, **systems programming**, and **performance engineering** - achieving **4.8M+ messages/second** throughput with **sub-20µs latency**.
+A high-throughput market data feed handler and order book engine built with modern C++20 to understand real-world trading infrastructure. This project was developed to learn about **quantitative finance**, **systems programming**, and **performance engineering** - achieving **4.8M+ messages/second** throughput with **sub-20µs latency**.
 
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/AdamsCode1/market-feed-cpp)
 [![C++20](https://img.shields.io/badge/C%2B%2B-20-blue)](https://en.cppreference.com/w/cpp/20)
@@ -41,23 +41,24 @@ A production-ready, high-throughput market data feed handler and order book engi
 
 </div>
 
-## 🎯 Why This Project Matters (For Recruiters)
+## 🎯 Project Motivation
 
-This project demonstrates **production-level expertise** in areas critical to **quantitative finance**, **high-frequency trading**, and **system-level programming**:
+This project emerged from curiosity about how high-frequency trading systems work under the hood. The goal was to understand:
 
-### 💼 **Professional Skills Demonstrated**
-- **🏗️ System Architecture**: Designed scalable, low-latency financial infrastructure
-- **⚡ Performance Engineering**: Achieved 4.8M+ msgs/s with <20µs p99 latency  
-- **💰 Financial Domain**: Deep understanding of order books, market data, trading protocols
-- **🔧 Modern C++**: Advanced C++20 features, RAII, zero-copy, lock-free programming
-- **🧪 Quality Assurance**: Comprehensive testing (35 tests), benchmarking, CI/CD
-- **📊 Optimization**: Memory-mapped I/O, cache-friendly data structures, NUMA awareness
+### � **Learning Objectives**
+- **🏗️ System Design**: How to build scalable, low-latency financial infrastructure
+- **⚡ Performance Engineering**: Achieving millions of messages per second with microsecond precision
+- **💰 Financial Markets**: Understanding order books, market data, and trading protocols
+- **🔧 Modern C++**: Applying C++20 features in a real-world, performance-critical context
+- **🧪 Quality Engineering**: Implementing comprehensive testing and benchmarking
+- **📊 Optimization**: Memory-mapped I/O, cache-friendly data structures, and lock-free programming
 
-### 🏢 **Industry Relevance**
-- **Fintech/Trading Firms**: Order book engines, market data processors, risk systems
-- **High-Performance Computing**: Low-latency systems, distributed computing, optimization
-- **System Software**: Kernel development, embedded systems, real-time applications
-- **Technology Infrastructure**: Backend systems, middleware, performance-critical services
+### � **What I Learned**
+- **Trading Systems**: How market makers and exchanges process millions of orders
+- **Low-Latency Programming**: Techniques for achieving sub-microsecond response times
+- **Financial Protocols**: Binary message formats used in real trading infrastructure
+- **Performance Measurement**: Proper latency tracking and throughput optimization
+- **System Architecture**: Building maintainable, high-performance C++ applications
 
 ## Overview
 
@@ -374,19 +375,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 📬 Contact & Professional Inquiry
+## 📬 Contact
 
-**Adam Hassan** - Software Engineer specializing in High-Performance Systems & Financial Technology
+**Adam Hassan** - Software Engineer interested in High-Performance Systems & Financial Technology
 
 - 📧 **Email**: [your.email@example.com](mailto:your.email@example.com)
 - 💼 **LinkedIn**: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)
 - 🐙 **GitHub**: [@AdamsCode1](https://github.com/AdamsCode1)
-- 🌐 **Portfolio**: [yourportfolio.com](https://yourportfolio.com)
 
-**Open to opportunities in:**
-- 🏦 **Quantitative Finance** (Market Making, Risk Management, Trading Systems)
-- ⚡ **High-Frequency Trading** (Low-latency Infrastructure, Order Management)
-- 🏗️ **System Architecture** (Distributed Systems, Performance Engineering)
-- 💻 **C++ Development** (Financial Services, Gaming, Real-time Systems)
-
-> *"Passionate about building production-grade systems that process millions of transactions with microsecond precision. This project demonstrates my expertise in modern C++, financial markets, and performance optimization."*
+> *This project represents my journey learning about high-performance financial systems. I'm passionate about building systems that can process millions of transactions with microsecond precision.*
