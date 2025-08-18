@@ -185,7 +185,7 @@ graph TD
 
 ```bash
 # 1. Clone and build (modern CMake + Ninja)
-git clone https://github.com/adamhassan/market-feed.git && cd market-feed
+git clone https://github.com/AdamsCode1/market-feed.git && cd market-feed
 make build
 
 # 2. Generate synthetic market data
